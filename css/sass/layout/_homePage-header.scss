@@ -1,0 +1,62 @@
+@use "../helpers/index" as *;
+
+/* Start Headaer */
+.header {
+  padding: 10px;
+  color: map-get($main-color, "text-color");
+  background-color: map-get($main-color, "header");
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    .burger-icon {
+      width: 25px;
+      cursor: pointer;
+      height: fit-content;
+      display: flex;
+      flex-wrap: wrap;
+
+      > span {
+        width: 100%;
+        height: 2px;
+        background-color: map-get($main-color, "text-color");
+
+        &:not(:last-child) {
+          margin-bottom: 4px;
+        }
+      }
+    }
+
+    .add-manual-session {
+      width: 17px;
+      height: 17px;
+      background-color: map-get($main-color, "text-color");
+      border-radius: 50%;
+      transition: $transition;
+      position: relative;
+      
+      &:hover {
+        background-color: mix(map-get($main-color, "text-color"), mix(map-get($main-color, "text-color"), map-get($main-color, "body")));
+      }
+      &:before, &:after {
+        content: "";
+        width: 2px;
+        height: 55%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        background-color: map-get($main-color, "header");
+      }
+      &:before {
+        transform: translate(-50%, -50%);
+      }
+      &:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+}
+/* End Headaer */

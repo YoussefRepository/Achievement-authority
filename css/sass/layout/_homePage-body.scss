@@ -1,0 +1,69 @@
+@use "../helpers/index" as *;
+
+/* Start Body */
+.body {
+  height: calc(100% / 1.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .container {
+    @extend %container;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 1fr));
+      justify-items: center;
+      gap: 10px;
+
+      &__box {
+        width: 160px;
+        height: 160px;
+        // padding: 20px;
+        background-color: mix(map-get($main-color, "header"), map-get($main-color, "body"));
+        border: 2px solid map-get($main-color, "header");
+        border-radius: 5px;
+        text-align: center;
+        transition: $transition;
+        @extend %container;
+        flex-direction: column;
+        
+        @include breakpoint-between(map-get($media-width, "medium"), map-get($media-width, "large")) {
+          width: 140px;
+          height: 140px;
+        }
+        @include breakpoint-between(map-get($media-width, "mobile"), map-get($media-width, "medium")) {
+          width: 140px;
+          height: 140px;
+        }
+        @include breakpoint-down(map-get($media-width, "mobile")) {
+          width: 110px;
+          height: 110px;
+        }
+        &:hover {
+          background-color: mix(map-get($main-color, "header"), mix(map-get($main-color, "header"), map-get($main-color, "body")));
+        }
+      }
+      &__img {
+        width: 60px;
+        margin: 0 auto;
+
+        @include breakpoint-down(map-get($media-width, "mobile")) {
+          width: 40px;
+        }
+      }
+      &__time {
+        margin-top: 10px;
+        color: var(--i);
+        font-weight: 600;
+        position: relative;
+
+        &::before {
+          @extend %box-shadow;
+          box-shadow: 0 0 20px 0 var(--i);
+        }
+      }
+    }
+  }
+}
+/* End Body */

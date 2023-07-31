@@ -1,0 +1,15 @@
+@use "../helpers/index" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: $font;
+  background-color: map-get($main-color, "body");
+}
+img {
+  max-width: 100%;
+}

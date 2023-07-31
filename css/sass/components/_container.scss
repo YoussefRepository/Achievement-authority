@@ -1,0 +1,26 @@
+@use "./../helpers/index" as *;
+
+
+.container {
+  font-family: $font;
+
+  
+  @include breakpoint-down(map-get($media-width, "mobile")) {
+    padding: 15px;
+  }
+  @include breakpoint-between(map-get($media-width, "mobile"), map-get($media-width, "medium")) {
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+  @include breakpoint-between(map-get($media-width, "medium"), map-get($media-width, "large")) {
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+  @include breakpoint-up(map-get($media-width, "large")) {
+    width: 550px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,9 @@
+@use "../layout/homePage" as *;
+
+/* Start Home Page */
+.home-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* End Home Page */

@@ -1,0 +1,26 @@
+
+// Mixin To Controle In Media Query
+@mixin breakpoint-down($dimention) {
+  @media (max-width: $dimention) {
+    @content;
+  }
+}
+@mixin breakpoint-between($dimention-one, $dimention-two) {
+  @media (min-width: $dimention-one) and (max-width:$dimention-two) {
+    @content;
+  }
+}
+@mixin breakpoint-up($dimention) {
+  @media (min-width: $dimention) {
+    @content;
+  }
+}
+
+// Mixin To Put Prefixis In Element
+@mixin prefixer($property, $value, $prefixes...) {
+
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property} : $value;
+}

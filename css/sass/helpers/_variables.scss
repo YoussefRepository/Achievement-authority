@@ -1,0 +1,33 @@
+// Media Query
+$media-width: (
+  mobile: 768px,
+  medium: 992px,
+  large: 1200px
+);
+
+// Main Color Variabel
+$main-color: (
+  header: #1e2329,
+  body: #2b2f38,
+  text-color: #1dd6b7,
+  alt-text-color: #c4dcde,
+);
+
+// Session Color
+$session-color: (
+  olive: #a4c400,
+  lemon: #fac600,
+  cucumber: #5eac24,
+  pepper: #f44335,
+  tomato: #c41926,
+  carrot: #fea832,
+  avocado: #4a7017,
+  radish: #ad1457,
+  cabbage: #73ca5b,
+);
+
+// Font Variabel
+$font: 'Open Sans', sans-serif;
+
+// Transition Variable
+$transition: .3s;
