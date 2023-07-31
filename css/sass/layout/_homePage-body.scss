@@ -19,7 +19,6 @@
       &__box {
         width: 160px;
         height: 160px;
-        // padding: 20px;
         background-color: mix(map-get($main-color, "header"), map-get($main-color, "body"));
         border: 2px solid map-get($main-color, "header");
         border-radius: 5px;

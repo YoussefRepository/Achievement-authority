@@ -1,0 +1,60 @@
+@use "../helpers/index" as *;
+
+/* Start Sidebar */
+.sidebar {
+  height: 100%;
+  background-color: map-get($main-color, "header");
+  transition: $transition;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  // left: 0;
+  right: 100%;
+  z-index: 5;
+  
+  @include breakpoint-up(map-get($media-width, "mobile")) {
+    min-width: 300px;
+    max-width: 400px;
+  }
+  @include breakpoint-down(map-get($media-width, "mobile")) {
+    width: 250px;
+  }
+  &__logo {
+    width: 100%;
+    padding: 30px;
+    background-color: map-get($main-color, "header");
+    @extend %container;
+
+    img {
+      width: 70px;
+    }
+  }
+  &__container {
+    padding: 20px 15px;
+    background-color: map-get($main-color, "body");
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  &__box {
+    width: 100%;
+    padding: 18px 15px;
+    margin-bottom: 5px;
+    color: white;
+    background-color: mix(map-get($main-color, "header"), map-get($main-color, "body"));
+    border-radius: 3px;
+    border: 2px solid map-get($main-color, "header");
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background-color: mix(map-get($main-color, "header"), mix(map-get($main-color, "header"), map-get($main-color, "body")));
+    }
+    i {
+      margin-right: 10px;
+      color: map-get($main-color, "text-color");
+    }
+  }
+}
+/* End Sidebar */
