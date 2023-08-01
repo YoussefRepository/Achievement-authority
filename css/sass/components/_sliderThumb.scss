@@ -1,0 +1,12 @@
+@use "../helpers/index" as *;
+
+.--slider {
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+    transition: $transition;
+    background-color: mix(map-get($main-color, "body"), map-get($main-color, "project"));
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: mix(map-get($main-color, "text-color"), map-get($main-color, "project"));
+  }
+}

@@ -1,6 +1,6 @@
 // Media Query
 $media-width: (
-  mobile: 768px,
+  mobile: 767px,
   medium: 992px,
   large: 1200px
 );
@@ -9,8 +9,10 @@ $media-width: (
 $main-color: (
   header: #1e2329,
   body: #2b2f38,
+  alt-body: #44494f,
   text-color: #1dd6b7,
   alt-text-color: #c4dcde,
+  project: #373b44,
 );
 
 // Session Color
@@ -31,3 +33,6 @@ $font: 'Open Sans', sans-serif;
 
 // Transition Variable
 $transition: .3s;
+
+// Scroll Bar
+$scrollbar-width: 5px

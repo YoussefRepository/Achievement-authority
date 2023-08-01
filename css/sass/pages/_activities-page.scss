@@ -1,0 +1,14 @@
+@use "../helpers/index" as *;
+
+/* Start Activities */
+body {
+  background-color: map-get($main-color, "alt-body");
+
+  .activity-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    // overflow: hidden;
+  }
+}
+/* End Activities */

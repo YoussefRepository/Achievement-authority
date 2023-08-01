@@ -1,4 +1,4 @@
-@use "../helpers/index" as *;
+@use "../../helpers/index" as *;
 
 /* Start Body */
 .body {
@@ -42,6 +42,9 @@
         &:hover {
           background-color: mix(map-get($main-color, "header"), mix(map-get($main-color, "header"), map-get($main-color, "body")));
         }
+        &:hover .grid__time {
+          text-shadow: 0 0 15px var(--i);
+        }
       }
       &__img {
         width: 60px;
@@ -56,11 +59,8 @@
         color: var(--i);
         font-weight: 600;
         position: relative;
-
-        &::before {
-          @extend %box-shadow;
-          box-shadow: 0 0 20px 0 var(--i);
-        }
+        transition: $transition;
+        text-shadow: 0 0 15px var(--i), 0 0 50px var(--i);
       }
     }
   }

@@ -11,16 +11,16 @@
   @include breakpoint-between(map-get($media-width, "mobile"), map-get($media-width, "medium")) {
     width: 500px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
   @include breakpoint-between(map-get($media-width, "medium"), map-get($media-width, "large")) {
     width: 500px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
   @include breakpoint-up(map-get($media-width, "large")) {
     width: 550px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
 }

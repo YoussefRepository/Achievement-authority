@@ -1,4 +1,4 @@
-@use "../helpers/index" as *;
+@use "../../helpers/index" as *;
 
 /* Start Footer */
 .footer {
@@ -31,6 +31,7 @@
           @extend %container;
           
           > span {
+            font-weight: 500;
             margin-left: 10px;
           }
         }
@@ -52,30 +53,26 @@
         @include breakpoint-down(map-get($media-width, "mobile")) {
           margin-top: 5px;
         }
-        &:before {
+        &:before, &:after {
           content: "";
           height: 100%;
-          width: calc(100% / 3);
-          border-left: 1px solid map-get($main-color, "alt-text-color");
-          border-right: 1px solid map-get($main-color, "alt-text-color");
+          width: 1px;
+          background-color: map-get($main-color, "alt-text-color");
           position: absolute;
           top: 0;
-          left: 50%;
-          transform: translateX(-50%);
+        }
+        &:before {
+          left: calc(100% / 3);
+        }
+        &:after {
+          right: calc(100% / 3);
         }
       }
     }
   }
   &__achv {   
     font-weight: 600;
-    position: relative;
-
-    &:before {
-      @extend %box-shadow;
-      width: 1px;
-      height: 1px;
-      box-shadow: 0 0 15px 3px var(--i);
-    }
+    text-shadow: 0 0 10px mix(map-get($main-color, "text-color"), map-get($main-color, "header"));
   }
 }
 /* End Footer */

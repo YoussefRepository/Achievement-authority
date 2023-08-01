@@ -1,0 +1,37 @@
+@use "../helpers/index" as *;
+
+.header.--page-header {
+  color: map-get($main-color, "text-color");
+  
+  .container {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    position: relative;
+    
+    @include breakpoint-down(map-get($media-width, "mobile")) {
+      background-color: map-get($main-color, "header");
+    }
+    p {
+      padding: 15px 0;
+      background-color: map-get($main-color, "header");
+      height: 100%;
+    }
+    .header__forwerd {
+      color: map-get($main-color, "text-color");
+      transition: $transition;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%);
+  
+      @include breakpoint-down(map-get($media-width, "mobile")) {
+        left: 20px;
+      }
+      &:hover {
+        color: mix(map-get($main-color, "text-color"), mix(map-get($main-color, "text-color"), map-get($main-color, "header")));
+      }
+    }
+  }
+}

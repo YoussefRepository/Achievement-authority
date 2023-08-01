@@ -1,0 +1,240 @@
+.body .container .active-project .project__option, .body .container .active-project .project__box.project--time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background-color: #2b2f38;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.header.--page-header {
+  color: #1dd6b7;
+}
+.header.--page-header .container {
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .header.--page-header .container {
+    background-color: #1e2329;
+  }
+}
+.header.--page-header .container p {
+  padding: 15px 0;
+  background-color: #1e2329;
+  height: 100%;
+}
+.header.--page-header .container .header__forwerd {
+  color: #1dd6b7;
+  transition: 0.3s;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+@media (max-width: 767px) {
+  .header.--page-header .container .header__forwerd {
+    left: 20px;
+  }
+}
+.header.--page-header .container .header__forwerd:hover {
+  color: #1eaa94;
+}
+
+.container {
+  font-family: "Open Sans", sans-serif;
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 15px;
+  }
+}
+@media (min-width: 767px) and (max-width: 992px) {
+  .container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px 10px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 550px;
+    margin: 0 auto;
+    padding: 10px 10px;
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 1, 0.336);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.show-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader {
+  width: 100%;
+  height: 100%;
+  background-color: #1e2329;
+  transition: 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.loader__img {
+  width: 100px;
+}
+.loader.show-loader {
+  opacity: 1;
+  visibility: visible;
+}
+
+.--slider::-webkit-scrollbar, .body .container .active-project::-webkit-scrollbar {
+  width: 5px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #31353e;
+}
+.--slider::-webkit-scrollbar-thumb, .body .container .active-project::-webkit-scrollbar-thumb {
+  background-color: #2a897e;
+}
+
+/* Start Activities */
+body {
+  background-color: #44494f;
+}
+body .activity-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* End Activities */
+/* Start Body */
+.body {
+  margin: 0 auto;
+  flex: 1;
+}
+@media (max-width: 767px) {
+  .body {
+    width: 100%;
+  }
+}
+.body .container {
+  height: 100%;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 767px) {
+  .body .container {
+    padding: 0;
+  }
+}
+.body .container .active-project {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.body .container .active-project .project {
+  background-color: #373b44;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
+}
+.body .container .active-project .project:not(:last-of-type) {
+  margin-bottom: 2px;
+}
+.body .container .active-project .project:hover {
+  background-color: #2b2f37;
+}
+.body .container .active-project .project__box.project--name {
+  color: #c4dcde;
+  display: flex;
+  align-items: center;
+}
+.body .container .active-project .project__option {
+  height: 100%;
+  padding: 15px 25px;
+  margin-right: 10px;
+  background-color: #2b2f38;
+  cursor: pointer;
+  transition: 0.3s;
+  flex-direction: column;
+}
+.body .container .active-project .project__option:hover {
+  background-color: #252931;
+}
+.body .container .active-project .project__option:hover li {
+  background-color: #8f9194;
+}
+.body .container .active-project .project__option li {
+  width: 4px;
+  height: 4px;
+  margin-bottom: 3px;
+  background-color: #c4dcde;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.body .container .active-project .project__name {
+  font-weight: 500;
+}
+.body .container .active-project .project__box.project--time {
+  color: #1dd6b7;
+  padding-right: 15px;
+}
+.body .container .active-project .project__box.project--time :first-child {
+  margin-right: 5px;
+}
+
+/* End Body *//*# sourceMappingURL=activities.css.map */

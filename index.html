@@ -7,11 +7,11 @@
     <meta name="author" content="Youssef">
     <title>Achievement - Authority</title>
     <!-- Page Icon -->
-    <link rel="icon" href="/images/app-img/logo.png">
+    <link rel="icon" href="images/app-img/logo.png">
     <!-- Font Awsoem Icon Library -->
     <link rel="stylesheet" href="./css/all.min.css">
     <!-- Main Css File -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/home-page.css">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,11 +22,17 @@
     <!-- Start Home Page -->
     <div class="home-page">
 
+      <!-- Start Loader -->
+      <div class="loader">
+        <div class="loader__img"><img src="./images/app-img/logo.png" alt="logo"></div>
+      </div>
+      <!-- End Loader -->
+
       <!-- Start Header -->
       <div class="header">
         <div class="container">
           <!-- Set Sidebare -->
-          <span class="burger-icon">
+          <span class="burger-icon" id="sidebar_controler">
             <span></span>
             <span></span>
             <span></span>
@@ -38,7 +44,7 @@
             <span class="date__day"   id="day">Sunday</span>
           </div>
           <!-- Adding Sesstion Manualy-->
-          <a href="./" class="add-manual-session"></a> 
+          <a href="./" class="add-manual-session" id="add_session"></a> 
         </div>
       </div>
       <!-- End Header -->
@@ -106,17 +112,17 @@
           <div class="row --logo">
             <div class="row__box --logo">
               <div class="row__img"><img src="images/app-img/logo.png" alt="logo"></div>
-              <span>Daily achievement: <span class="footer__achv" style="--i: #1dd6b7;">15</span> m</span>
+              <span>Daily achievement: <span class="footer__achv" id="daily_achievement" style="--i: #1dd6b7;">15</span> m</span>
             </div>
 
             <div class="row__box">
-              <i class="fa fa-solid fa-star"></i>
-              <i class="fa fa-solid fa-star"></i>
-              <i class="fa fa-solid fa-star"></i>
+              <i class="fa fa-solid fa-star daily_progress_star"></i>
+              <i class="fa fa-solid fa-star daily_progress_star"></i>
+              <i class="fa fa-solid fa-star daily_progress_star"></i>
             </div>
           </div>
-          
-          <div class="row --prog"></div>
+
+          <div class="row --prog" id="progress_bar"></div>
 
         </div>
       </div>
@@ -127,25 +133,25 @@
         <div class="sidebar__logo"><img src="./images/app-img/logo.png" alt="logo"></div>
         <div class="sidebar__container">
 
-          <div class="sidebar__box">
+          <a href="./pages/" class="sidebar__box">
             <i class="fa-solid fa-clipboard-list"></i>
             <span>Sesstion hestory</span>
-          </div>
+          </a>
           
-          <div class="sidebar__box">
+          <a href="./pages/activities.html" class="sidebar__box">
             <i class="fa-solid fa-shapes"></i>
             <span>Projects & Activities</span>
-          </div>
+          </a>
           
-          <div class="sidebar__box">
+          <a href="./pages/" class="sidebar__box">
             <i class="fa-solid fa-chart-column"></i>
             <span>Analytics</span>
-          </div>
+          </a>
           
-          <div class="sidebar__box">
+          <a href="./pages/" class="sidebar__box">
             <i class="fa-solid fa-gear"></i>
             <span>Settings</span>
-          </div>
+          </a>
 
 
         </div>
