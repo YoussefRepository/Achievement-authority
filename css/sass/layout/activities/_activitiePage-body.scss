@@ -18,8 +18,9 @@
     @include breakpoint-down(map-get($media-width, "mobile")) {
       padding: 0;
     }
-    .active-project {
+    .active-project, .project-container {
       max-height: 300px;
+      box-shadow: 0 2px 10px map-get($main-color, "header");
       overflow-y: auto;
 
       @extend .--slider;
@@ -35,6 +36,9 @@
         }
         &:hover {
           background-color: mix(map-get($main-color, "project"), map-get($main-color, "header"));
+        }
+        &:hover .project__name {
+          text-shadow: 0 0 30px map-get($main-color, "alt-text-color");
         }
         &__box.project--name {
           color: map-get($main-color, "alt-text-color");
@@ -68,6 +72,7 @@
         }
         &__name {
           font-weight: 500;
+          transition: $transition;
         }
         &__box.project--time {
           color: map-get($main-color, "text-color");
@@ -80,7 +85,50 @@
         }
       }
     }
+    .archive-project {
+      margin-top: 40px;
+      position: relative;
+
+      .arc-mass {
+        width: fit-content;
+        margin: 0 auto;
+        color: map-get($main-color, "alt-text-color");
+        text-align: center;
+        font-weight: 500;
+        font-size: 20px;
+        position: relative;
+        transform: translateY(-10px);
+
+        i {
+          margin-left: 10px;
+        }
+      }
+    }
+    @include mass(".archive-project", ".project-container > .project", ".arc-mass", (display: none,));
   }
+  
+      .add-project {
+        width: 23px;
+        height: 23px;
+        color: mix(map-get($main-color, "text-color"), map-get($main-color, "header"));
+        background-color: map-get($main-color, "alt-text-color");
+        font-size: 25px;
+        box-sizing: content-box;
+        border-radius: 50%;
+        border: 17px solid map-get($main-color, "text-color");
+        outline-color: transparent;
+        cursor: pointer;
+        transition: border-color $transition;
+        @extend %container;
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &:hover {
+          border-color: mix(map-get($main-color, "text-color"), mix(map-get($main-color, "alt-body"), map-get($main-color, "header")));
+        }
+      }
 
 }
 /* End Body */

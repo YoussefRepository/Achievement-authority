@@ -1,0 +1,56 @@
+@use "../helpers/index" as *;
+
+.create {
+  padding: 10px;
+  background-color: map-get($main-color, "alt-body");
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  label {
+    margin-bottom: 8px;
+    color: map-get($main-color, "text-color");
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  input[type="text"] {
+    padding: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: map-get($main-color, "alt-text-color");
+    background-color: map-get($main-color, "body");
+    border: 1px solid map-get($main-color, "header");
+    outline: transparent;
+  }
+  input[type="submit"] {
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 0 auto 10px;
+    color: map-get($main-color, "alt-text-color");
+    background-color: map-get($main-color, "text-color");
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: transparent;
+    outline: transparent;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background-color: mix(map-get($main-color, "text-color"), mix(map-get($main-color, "alt-body"), map-get($main-color, "project")));
+    }
+  }
+}
+
+.show-create {
+  visibility: visible;
+  opacity: 1;
+}

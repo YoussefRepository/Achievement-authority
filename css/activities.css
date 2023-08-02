@@ -1,4 +1,4 @@
-.body .container .active-project .project__option, .body .container .active-project .project__box.project--time {
+.body .container .active-project .project__option, .body .container .project-container .project__option, .body .container .active-project .project__box.project--time, .body .container .project-container .project__box.project--time, .body .add-project {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +34,7 @@ a {
 }
 
 .header.--page-header {
-  color: #1dd6b7;
+  color: #00a9a4;
 }
 .header.--page-header .container {
   padding-top: 0;
@@ -53,7 +53,7 @@ a {
   height: 100%;
 }
 .header.--page-header .container .header__forwerd {
-  color: #1dd6b7;
+  color: #00a9a4;
   transition: 0.3s;
   cursor: pointer;
   position: absolute;
@@ -67,7 +67,7 @@ a {
   }
 }
 .header.--page-header .container .header__forwerd:hover {
-  color: #1eaa94;
+  color: #088886;
 }
 
 .container {
@@ -139,14 +139,97 @@ a {
   visibility: visible;
 }
 
-.--slider::-webkit-scrollbar, .body .container .active-project::-webkit-scrollbar {
+.--slider::-webkit-scrollbar, .body .container .active-project::-webkit-scrollbar, .body .container .project-container::-webkit-scrollbar {
   width: 5px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   background-color: #31353e;
 }
-.--slider::-webkit-scrollbar-thumb, .body .container .active-project::-webkit-scrollbar-thumb {
-  background-color: #2a897e;
+.--slider::-webkit-scrollbar-thumb, .body .container .active-project::-webkit-scrollbar-thumb, .body .container .project-container::-webkit-scrollbar-thumb {
+  background-color: #1c7274;
+}
+
+.context-menu {
+  color: #1e2329;
+  background-color: #b2b2b2;
+  border-radius: 2px;
+  transition: 0.3s;
+  position: absolute;
+  top: 100%;
+  transform-origin: left top;
+  transform: scale(0);
+}
+.context-menu__box {
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.context-menu__box:hover {
+  background-color: #949597;
+}
+.context-menu__box i {
+  margin-right: 6px;
+}
+.context-menu__box span {
+  font-weight: 600;
+}
+
+.show-context-menu {
+  transform: scale(1);
+}
+
+.create {
+  padding: 10px;
+  background-color: #44494f;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.create label {
+  margin-bottom: 8px;
+  color: #00a9a4;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+.create input[type=text] {
+  padding: 5px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #c4dcde;
+  background-color: #2b2f38;
+  border: 1px solid #1e2329;
+  outline: transparent;
+}
+.create input[type=submit] {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 50px;
+  margin: 0 auto 10px;
+  color: #c4dcde;
+  background-color: #00a9a4;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: transparent;
+  outline: transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.create input[type=submit]:hover {
+  background-color: #1f7677;
+}
+
+.show-create {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Start Activities */
@@ -181,29 +264,33 @@ body .activity-page {
     padding: 0;
   }
 }
-.body .container .active-project {
+.body .container .active-project, .body .container .project-container {
   max-height: 300px;
+  box-shadow: 0 2px 10px #1e2329;
   overflow-y: auto;
 }
-.body .container .active-project .project {
+.body .container .active-project .project, .body .container .project-container .project {
   background-color: #373b44;
   cursor: pointer;
   transition: 0.3s;
   display: flex;
   justify-content: space-between;
 }
-.body .container .active-project .project:not(:last-of-type) {
+.body .container .active-project .project:not(:last-of-type), .body .container .project-container .project:not(:last-of-type) {
   margin-bottom: 2px;
 }
-.body .container .active-project .project:hover {
+.body .container .active-project .project:hover, .body .container .project-container .project:hover {
   background-color: #2b2f37;
 }
-.body .container .active-project .project__box.project--name {
+.body .container .active-project .project:hover .project__name, .body .container .project-container .project:hover .project__name {
+  text-shadow: 0 0 30px #c4dcde;
+}
+.body .container .active-project .project__box.project--name, .body .container .project-container .project__box.project--name {
   color: #c4dcde;
   display: flex;
   align-items: center;
 }
-.body .container .active-project .project__option {
+.body .container .active-project .project__option, .body .container .project-container .project__option {
   height: 100%;
   padding: 15px 25px;
   margin-right: 10px;
@@ -212,13 +299,13 @@ body .activity-page {
   transition: 0.3s;
   flex-direction: column;
 }
-.body .container .active-project .project__option:hover {
+.body .container .active-project .project__option:hover, .body .container .project-container .project__option:hover {
   background-color: #252931;
 }
-.body .container .active-project .project__option:hover li {
+.body .container .active-project .project__option:hover li, .body .container .project-container .project__option:hover li {
   background-color: #8f9194;
 }
-.body .container .active-project .project__option li {
+.body .container .active-project .project__option li, .body .container .project-container .project__option li {
   width: 4px;
   height: 4px;
   margin-bottom: 3px;
@@ -226,15 +313,57 @@ body .activity-page {
   border-radius: 50%;
   transition: 0.3s;
 }
-.body .container .active-project .project__name {
+.body .container .active-project .project__name, .body .container .project-container .project__name {
   font-weight: 500;
+  transition: 0.3s;
 }
-.body .container .active-project .project__box.project--time {
-  color: #1dd6b7;
+.body .container .active-project .project__box.project--time, .body .container .project-container .project__box.project--time {
+  color: #00a9a4;
   padding-right: 15px;
 }
-.body .container .active-project .project__box.project--time :first-child {
+.body .container .active-project .project__box.project--time :first-child, .body .container .project-container .project__box.project--time :first-child {
   margin-right: 5px;
+}
+.body .container .archive-project {
+  margin-top: 40px;
+  position: relative;
+}
+.body .container .archive-project .arc-mass {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  color: #c4dcde;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  position: relative;
+  transform: translateY(-10px);
+}
+.body .container .archive-project .arc-mass i {
+  margin-left: 10px;
+}
+.body .container .archive-project:not(:has(.project-container > .project)) .arc-mass {
+  display: none;
+}
+.body .add-project {
+  width: 23px;
+  height: 23px;
+  color: #0f6667;
+  background-color: #c4dcde;
+  font-size: 25px;
+  box-sizing: content-box;
+  border-radius: 50%;
+  border: 17px solid #00a9a4;
+  outline-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.body .add-project:hover {
+  border-color: #197070;
 }
 
 /* End Body *//*# sourceMappingURL=activities.css.map */

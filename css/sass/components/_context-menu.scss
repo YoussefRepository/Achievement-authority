@@ -1,0 +1,32 @@
+@use "../helpers/index" as *;
+
+.context-menu {
+  color: map-get($main-color, "header");
+  background-color: #b2b2b2;
+  border-radius: 2px;
+  transition: $transition;
+  position: absolute;
+  top: 100%;
+  transform-origin: left top;
+  transform: scale(0);
+
+  &__box {
+    padding: 10px;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background-color: mix(#b2b2b2, mix(#b2b2b2, map-get($main-color, "project")));
+    }
+    i {
+      margin-right: 6px;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+}
+
+.show-context-menu {
+  transform: scale(1);
+}

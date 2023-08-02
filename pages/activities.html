@@ -86,153 +86,77 @@
               </div>
     
             </div>
-  
-            <div class="project">
-              <div class="project__box project--name">
-                <ul class="project__option">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <span class="project__name">Project one</span>
-              </div>
-              
-              <div class="project__box project--time">
-                <span class="project__hour">1h,</span>
-                <span class="project__hour">20m</span>
-              </div>
-    
-            </div>
-  
-            <div class="project">
-              <div class="project__box project--name">
-                <ul class="project__option">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <span class="project__name">Project one</span>
-              </div>
-              
-              <div class="project__box project--time">
-                <span class="project__hour">1h,</span>
-                <span class="project__hour">20m</span>
-              </div>
-    
-            </div>
-  
-            <div class="project">
-              <div class="project__box project--name">
-                <ul class="project__option">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <span class="project__name">Project one</span>
-              </div>
-              
-              <div class="project__box project--time">
-                <span class="project__hour">1h,</span>
-                <span class="project__hour">20m</span>
-              </div>
-    
-            </div>
-  
-            <div class="project">
-              <div class="project__box project--name">
-                <ul class="project__option">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <span class="project__name">Project one</span>
-              </div>
-              
-              <div class="project__box project--time">
-                <span class="project__hour">1h,</span>
-                <span class="project__hour">20m</span>
-              </div>
-    
-            </div>
-  
-            <div class="project">
-              <div class="project__box project--name">
-                <ul class="project__option">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <span class="project__name">Project one</span>
-              </div>
-              
-              <div class="project__box project--time">
-                <span class="project__hour">1h,</span>
-                <span class="project__hour">20m</span>
-              </div>
-    
-            </div>
-  
-            <div class="project">
-              <div class="project__box project--name">
-                <ul class="project__option">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <span class="project__name">Project one</span>
-              </div>
-              
-              <div class="project__box project--time">
-                <span class="project__hour">1h,</span>
-                <span class="project__hour">20m</span>
-              </div>
-    
-            </div>
-  
-            <div class="project">
-              <div class="project__box project--name">
-                <ul class="project__option">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <span class="project__name">Project one</span>
-              </div>
-              
-              <div class="project__box project--time">
-                <span class="project__hour">1h,</span>
-                <span class="project__hour">20m</span>
-              </div>
-    
-            </div>
-  
-            <div class="project">
-              <div class="project__box project--name">
-                <ul class="project__option">
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-                <span class="project__name">Project one</span>
-              </div>
-              
-              <div class="project__box project--time">
-                <span class="project__hour">1h,</span>
-                <span class="project__hour">20m</span>
-              </div>
-    
-            </div>
           </div>
 
-          <div class="archive-project"></div>
+          <div class="archive-project --slider">
+            <p class="arc-mass">Archgive <i class="fa fa-solid fa-archive"></i></p>
+            <div class="project-container">
+            <!-- 
+              <div class="project">
+                <div class="project__box project--name">
+                  <ul class="project__option">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+                  <span class="project__name">Project one</span>
+                </div>
+                
+                <div class="project__box project--time">
+                  <span class="project__hour">1h,</span>
+                  <span class="project__hour">20m</span>
+                </div>
+      
+              </div> -->
+            </div>
 
+          </div>  
         </div>
+        
+        <!-- Add New Project BTN -->
+        <button class="add-project">+</button> 
       </div>
       <!-- End Body -->
 
+      <!-- Start Context Menu -->
+      <div class="context-menu">
+
+        <div class="context-menu__box">
+          <i class="fa fa-solid fa-edit"></i>
+          <span>Edit</span>
+        </div>
+
+        <div class="context-menu__box">
+          <i class="fa fa-solid fa-archive"></i>
+          <span>Archive</span>
+        </div>
+
+        <div class="context-menu__box">
+          <i class="fa fa-solid fa-trash"></i>
+          <span>Delete</span>
+        </div>
+
+      </div>
+      <!-- End Context Menu -->
+
+      <!-- Start Adding New Project Form -->
+      <form action="" class="new-project create">
+        <label for="new-project-name">Add Project / Activity</label>
+        <input type="text" id="new-project-name" placeholder="Write project name" autocomplete="off">
+        <input type="submit" value="Add">
+      </form>
+      <!-- End Adding New Project Form -->
+
+      <!-- Start Editing Project Form -->
+      <form action="" class="edit-project create">
+        <input type="text" placeholder="Write project name" autocomplete="off">
+        <input type="submit" value="Edit">
+      </form>
+      <!-- End Editing Project Form -->
+
       <div class="overlay" id="overlay"></div>
     </div>
-    <!-- End Home Page -->
+    <!-- End Activity Page -->
 
 
     <script src="../js/activities.js"></script>
