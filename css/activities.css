@@ -106,6 +106,7 @@ a {
   background-color: rgba(0, 0, 1, 0.336);
   opacity: 0;
   visibility: hidden;
+  transition: 0.3s;
   position: absolute;
   top: 0;
   left: 0;
@@ -121,8 +122,8 @@ a {
   height: 100%;
   background-color: #1e2329;
   transition: 0.3s;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,9 +135,9 @@ a {
 .loader__img {
   width: 100px;
 }
-.loader.show-loader {
-  opacity: 1;
-  visibility: visible;
+.loader.hide-loader {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .--slider::-webkit-scrollbar, .body .container .active-project::-webkit-scrollbar, .body .container .project-container::-webkit-scrollbar {
@@ -154,12 +155,17 @@ a {
   background-color: #b2b2b2;
   border-radius: 2px;
   transition: 0.3s;
+  display: flex;
+  align-items: center;
   position: absolute;
-  top: 100%;
+  bottom: 0%;
+  left: -100%;
   transform-origin: left top;
   transform: scale(0);
 }
 .context-menu__box {
+  height: 100%;
+  flex-basis: 33.3333333333%;
   padding: 10px;
   cursor: pointer;
   transition: 0.3s;
@@ -175,6 +181,7 @@ a {
 }
 
 .show-context-menu {
+  left: 0;
   transform: scale(1);
 }
 
@@ -182,9 +189,8 @@ a {
   padding: 10px;
   background-color: #44494f;
   border-radius: 5px;
-  visibility: hidden;
-  opacity: 0;
-  display: flex;
+  transition: 0.3s;
+  display: none;
   flex-direction: column;
   position: absolute;
   top: 50%;
@@ -227,9 +233,8 @@ a {
   background-color: #1f7677;
 }
 
-.show-create {
-  visibility: visible;
-  opacity: 1;
+.show-form {
+  display: flex;
 }
 
 /* Start Activities */
@@ -266,18 +271,19 @@ body .activity-page {
 }
 .body .container .active-project, .body .container .project-container {
   max-height: 300px;
-  box-shadow: 0 2px 10px #1e2329;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 .body .container .active-project .project, .body .container .project-container .project {
+  margin-bottom: 2px;
   background-color: #373b44;
+  order: 5;
   cursor: pointer;
   transition: 0.3s;
   display: flex;
   justify-content: space-between;
-}
-.body .container .active-project .project:not(:last-of-type), .body .container .project-container .project:not(:last-of-type) {
-  margin-bottom: 2px;
+  position: relative;
 }
 .body .container .active-project .project:hover, .body .container .project-container .project:hover {
   background-color: #2b2f37;
@@ -324,6 +330,20 @@ body .activity-page {
 .body .container .active-project .project__box.project--time :first-child, .body .container .project-container .project__box.project--time :first-child {
   margin-right: 5px;
 }
+.body .container .mass {
+  display: none;
+}
+.body .container .active-project:not(:has(.project-container > .project)) .mass {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px auto;
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+  display: block;
+  position: relative;
+}
 .body .container .archive-project {
   margin-top: 40px;
   position: relative;
@@ -352,6 +372,7 @@ body .activity-page {
   background-color: #c4dcde;
   font-size: 25px;
   box-sizing: content-box;
+  box-shadow: 2px 6px 8px 2px #2b2f37;
   border-radius: 50%;
   border: 17px solid #00a9a4;
   outline-color: transparent;

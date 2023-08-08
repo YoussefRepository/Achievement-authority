@@ -5,12 +5,17 @@
   background-color: #b2b2b2;
   border-radius: 2px;
   transition: $transition;
+  display: flex;
+  align-items: center;
   position: absolute;
-  top: 100%;
+  bottom: 0%;
+  left: -100%;
   transform-origin: left top;
   transform: scale(0);
 
   &__box {
+    height: 100%;
+    flex-basis: calc(100% / 3);
     padding: 10px;
     cursor: pointer;
     transition: $transition;
@@ -28,5 +33,6 @@
 }
 
 .show-context-menu {
+  left: 0;
   transform: scale(1);
 }

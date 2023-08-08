@@ -6,8 +6,8 @@
   height: 100%;
   background-color: map-get($main-color, "header");
   transition: $transition;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
+  visibility: visible;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,8 +19,8 @@
   &__img {
     width: 100px;
   }
-  &.show-loader {
-    opacity: 1;
-    visibility: visible;
+  &.hide-loader {
+    opacity: 0;
+    visibility: hidden;
   }
 }

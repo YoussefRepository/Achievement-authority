@@ -4,7 +4,6 @@
 .container {
   font-family: $font;
 
-  
   @include breakpoint-down(map-get($media-width, "mobile")) {
     padding: 15px;
   }

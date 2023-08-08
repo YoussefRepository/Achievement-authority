@@ -4,9 +4,9 @@
   padding: 10px;
   background-color: map-get($main-color, "alt-body");
   border-radius: 5px;
-  visibility: hidden;
-  opacity: 0;
-  display: flex;
+  transition: $transition;
+  
+  display: none;
   flex-direction: column;
   position: absolute;
   top: 50%;
@@ -50,7 +50,6 @@
   }
 }
 
-.show-create {
-  visibility: visible;
-  opacity: 1;
+.show-form {
+  display: flex;
 }

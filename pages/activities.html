@@ -19,6 +19,12 @@
   </head>
   <body>
 
+    <!-- Start Loader -->
+    <div class="loader" id="loader">
+      <div class="loader__img"><img src="../images/app-img/logo.png" alt="logo"></div>
+    </div>
+    <!-- End Loader -->
+
     <!-- Start Home Page -->
     <div class="activity-page">
 
@@ -34,9 +40,13 @@
       <!-- Start Body -->
       <div class="body">
         <div class="container">
+          
+          <div class="active-project --slider" >
+            <p class="mass">There is no projects :(</p>
+            <div class="project-container" id="active-project-container">
 
-          <div class="active-project --slider">  
-            <div class="project">
+            </div>
+            <!-- <div class="project">
               <div class="project__box project--name">
                 <ul class="project__option">
                   <li></li>
@@ -85,12 +95,12 @@
                 <span class="project__hour">20m</span>
               </div>
     
-            </div>
+            </div> -->
           </div>
 
-          <div class="archive-project --slider">
+          <div class="archive-project --slider" >
             <p class="arc-mass">Archgive <i class="fa fa-solid fa-archive"></i></p>
-            <div class="project-container">
+            <div class="project-container" id="archive-project-container">
             <!-- 
               <div class="project">
                 <div class="project__box project--name">
@@ -114,42 +124,39 @@
         </div>
         
         <!-- Add New Project BTN -->
-        <button class="add-project">+</button> 
+        <button class="add-project" id="add-new-project-btn">+</button> 
       </div>
       <!-- End Body -->
 
       <!-- Start Context Menu -->
-      <div class="context-menu">
+      <div class="context-menu" id="context-menu">
 
-        <div class="context-menu__box">
+        <div class="context-menu__box" id="edit-btn">
           <i class="fa fa-solid fa-edit"></i>
-          <span>Edit</span>
         </div>
 
-        <div class="context-menu__box">
+        <div class="context-menu__box" id="archive-btn">
           <i class="fa fa-solid fa-archive"></i>
-          <span>Archive</span>
         </div>
 
-        <div class="context-menu__box">
+        <div class="context-menu__box" id="delete-btn">
           <i class="fa fa-solid fa-trash"></i>
-          <span>Delete</span>
         </div>
 
       </div>
       <!-- End Context Menu -->
 
       <!-- Start Adding New Project Form -->
-      <form action="" class="new-project create">
+      <form action="" class="new-project create" id="create-new-project-form">
         <label for="new-project-name">Add Project / Activity</label>
-        <input type="text" id="new-project-name" placeholder="Write project name" autocomplete="off">
+        <input type="text" id="new-project-name" placeholder="Write project name" maxlength="35" autocomplete="off">
         <input type="submit" value="Add">
       </form>
       <!-- End Adding New Project Form -->
 
       <!-- Start Editing Project Form -->
-      <form action="" class="edit-project create">
-        <input type="text" placeholder="Write project name" autocomplete="off">
+      <form action="" class="edit-project create" id="edit-project-form">
+        <input type="text" placeholder="Write project name" id="eidt-project-input" maxlength="35" autocomplete="off">
         <input type="submit" value="Edit">
       </form>
       <!-- End Editing Project Form -->
